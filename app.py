@@ -43,8 +43,11 @@ class Emails(db.Model):
 with app.app_context():
     db.create_all()
 
-
 @app.route('/')
+def main():  # put application's code here
+    return render_template('mainPage.html')
+
+@app.route('/show')
 def Display():  # put application's code here
     return render_template('showData.html')
 

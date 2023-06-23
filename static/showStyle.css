@@ -297,15 +297,6 @@ body
   .container{
     padding-top: 14px;
   }
-  .aqi{
-    width: 85px;
-    height: 85px;
-    margin: 0  0 15px 0;
-    font-size: 14px;
-  }
-  .aqi h2,.aqi h5{
-    font-size: 17px;
-  }
   .flex{
     flex-direction: column-reverse;
   }
