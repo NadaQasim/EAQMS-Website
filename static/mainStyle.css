@@ -28,27 +28,6 @@ html{
 #menu{
      height: 135vh;
 }
-
-#email{
-    border-radius: 15px;
-    border: none;
-    width: 350px;
-    height: 40px;
-    font-family: "Times New Roman", serif;
-}
-#submit{
-    border-radius: 15px;
-    border: none;
-    width: 90px;
-    height: 40px;
-    background: #5378F6;
-    color: #e0e5ec;
-    font-family: "Times New Roman", serif;
-}
-#submit:hover{
- background: #9AB9FE;
-    color: #476df8;
-}
 #main p{
 
     font-family: "Times New Roman", serif;
