@@ -84,7 +84,8 @@ def main():  # put application's code here
 
 @app.route('/show')
 def Display():
-    return render_template('showData.html')
+    info = AirData.query.order_by(AirData.date_created.desc()).first()
+    return render_template('showData.html', content=info)
 
 
 if __name__ == '__main__':
