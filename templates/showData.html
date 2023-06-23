@@ -21,7 +21,7 @@
         <span></span>
                     <ul id="menu">
                       <a href="/"><li>Home</li></a>
-                      <a href="/show"><li>Show Info</li></a>
+                      <a href="/show"><li>Show Data</li></a>
                     </ul>
                 </div>
             </nav>
@@ -54,60 +54,60 @@
 <div id="main">
     <div class="container">
         <div class="square neumorphism mr5" >
-            <h2>Temperature: </h2>
+            <h2>TEMPERATURE: </h2>
             <div><p>{{ content.temperature }} ° C </p></div>
                 {% if content.date_created %}
-                    <p style="font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
+                    <p style="color:#74777a;font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
                 {% endif %}
         </div>
         <div class="square neumorphism mr5">
-            <h2>Humidity: </h2>
+            <h2>HUMIDITY: </h2>
             <div><p>{{ content.humidity }}  % </p></div>
                 {% if content.date_created %}
-                    <p style="font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
+                    <p style="color:#74777a;font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
                 {% endif %}
         </div>
         <div class="square neumorphism mr5">
-            <h2>Carbon Dioxide: </h2>
+            <h2>CARBON DIOXIDE: </h2>
             <div><p>{{ content.co2 }} PPM </p></div>
                 {% if content.date_created %}
-                    <p style="font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
+                    <p style="color:#74777a;font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
                 {% endif %}
         </div>
         <div class="square neumorphism mr5">
             <h2>PM 1: </h2><div><p>{{ content.pm1 }} µg/m3 </p></div>
                 {% if content.date_created %}
-                    <p style="font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
+                    <p style="color:#74777a;font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
                 {% endif %}
         </div>
         <div class="square neumorphism mr5">
             <h2>PM 2.5:</h2><div><p>{{ content.pm2_5 }} µg/m3 </p></div>
                 {% if content.date_created %}
-                    <p style="font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
+                    <p style="color:#74777a;font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
                 {% endif %}
         </div>
         <div class="square neumorphism mr5">
             <h2>PM 4: </h2><div><p>{{ content.pm4 }} µg/m3 </p></div>
                 {% if content.date_created %}
-                    <p style="font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
+                    <p style="color:#74777a;font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
                 {% endif %}
         </div>
         <div class="square neumorphism mr5">
             <h2>PM 10: </h2><div><p>{{ content.pm10 }} µg/m3 </p></div>
                 {% if content.date_created %}
-                    <p style="font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
+                    <p style="color:#74777a;font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
                 {% endif %}
         </div>
         <div class="square neumorphism mr5">
-            <h2>Ozone: </h2><div><p>{{ content.o3 }} PPB </p></div>
+            <h2>OZONE: </h2><div><p>{{ content.o3 }} PPB </p></div>
                 {% if content.date_created %}
-                    <p style="font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
+                    <p style="color:#74777a;font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
                 {% endif %}
         </div>
         <div class="square neumorphism mr5">
             <h2>VOC: </h2><div><p>{{ content.voc }} PPM </p></div>
                 {% if content.date_created %}
-                    <p style="font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
+                    <p style="color:#74777a;font-size: 20px;">Last Update:{{ content.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</p>
                 {% endif %}
         </div>
     </div>

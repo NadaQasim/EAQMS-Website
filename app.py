@@ -1,9 +1,10 @@
 from datetime import datetime
-
+from Alarm import Alarm
 import pytz
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-
+from dotenv import load_dotenv
+import os
 app = Flask(__name__)
 
 # Setting up SQLite database configuration for Flask-SQLAlchemy
@@ -55,6 +56,7 @@ def main():  # put application's code here
             decoded_payload = request.json['uplink_message']['decoded_payload']
             co2Val = decoded_payload.get("co2", decoded_payload.get("temperature_1"))
             o3Val = decoded_payload.get("o3", decoded_payload.get("analog_in_3"))
+            flaming = request.json["uplink_message"]["decoded_payload"]["digital_in_2"]
             try:
                 new_info = AirData(dev_eui=eui,
                                    temperature=request.json["uplink_message"]["decoded_payload"]["temperature_5"],
@@ -66,9 +68,18 @@ def main():  # put application's code here
                                    pm2_5=request.json["uplink_message"]["decoded_payload"]["temperature_8"],
                                    pm4=request.json["uplink_message"]["decoded_payload"]["temperature_9"],
                                    pm10=request.json["uplink_message"]["decoded_payload"]["temperature_10"],
-                                   flame=request.json["uplink_message"]["decoded_payload"]["digital_in_2"],
+                                   flame=flaming,
                                    date_created=datetime.utcnow().replace(tzinfo=pytz.utc).astimezone(
                                        baghdad_tz))
+                if (co2Val > 2000) or (o3Val > 5000):
+                    email_list = Emails.query.with_entities(Emails.email).all()
+                    for email in email_list:
+                        Alarm.send_alarm(email, "Poor Air Quality Detected", "Please try to stay away for your safety")
+                if flaming == 1:
+                    email_list = Emails.query.with_entities(Emails.email).all()
+                    for email in email_list:
+                        Alarm.send_alarm(email, "Possible Fire", "the device detected a possible file, please try to "
+                                                                 "stay away for your own safety")
                 # Adding and committing the air quality data to the database
                 db.session.add(new_info)
                 db.session.commit()

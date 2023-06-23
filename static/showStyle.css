@@ -23,14 +23,12 @@ body
 {
   text-decoration: none;
   color: #ffffff;
-
   transition: color 0.3s ease;
 }
 
 #menuToggle a:hover
 {
-  color: #387df8;
-  text-decoration: underline #387df8;
+  color: #409BA8;
 }
 
 #main{
@@ -94,7 +92,7 @@ body
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: #387df8;
+  background: #409BA8;
 
 }
 
@@ -127,10 +125,10 @@ body
    height: 180vh;
   margin: -100px 0 0 -50px;
   padding: 125px 35px 40px;
-  background: linear-gradient(80deg, rgba(201, 245, 224, 0.7), rgba(4, 218, 200, 0.7));
+  background: linear-gradient(60deg, rgba(4, 218, 200, 0.7), rgba(201, 245, 224, 0.7));
   list-style-type: none;
   /* to stop flickering of text in safari */
-  font-family: "Times New Roman", serif;
+  font-family: "Comic Sans MS", cursive;
   transform: translate(-100%, 0);
   text-align: left;
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
@@ -234,15 +232,15 @@ body
   align-items: center;
 }
 .square h2{
-  font-family: "Times New Roman", serif;
-  color: #74777a;
-  padding: 5px;
+  color: rgb(42, 171, 171);
+  font-family: "Comic Sans MS", cursive;
+  font-size: 26px;
+  padding: 7px;
 }
 .square p{
   font-family: "Times New Roman", serif;
   font-size: 30px;
-  padding: 5px;
-  float: left;
+  padding: 10px;
   color: #2b4246;
 }
 .neumorphism {
@@ -273,11 +271,11 @@ body
   }
   .square p{
     padding: 5px;
-    font-size: 25px;
+    font-size: 23px;
   }
   .square h2{
     font-size: 25px;
-    padding: 2px;
+    padding: 4px;
 
   }
   .update{
@@ -285,6 +283,7 @@ body
   }
   #menu{
     height: 355vh;
+    width: 190px;
   }
   .container{
     padding-top: 14px;

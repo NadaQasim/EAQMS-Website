@@ -41,7 +41,7 @@
 
                     <ul id="menu">
                       <a href="/"><li>Home</li></a>
-                      <a href="/show"><li>Show Info</li></a>
+                      <a href="/show"><li>Show Data</li></a>
                     </ul>
                 </div>
             </nav>
@@ -81,7 +81,7 @@
             <form id="emailForm" action="/saveemail" method="POST">
             <p style="color: #60BE8D">To receive notifications, kindly provide your Gmail account:</p>
                 <label>
-                    <input name="email" id="email" type="email" placeholder="Gmail Address" required/>
+                    <input  name="email" id="email" type="email" placeholder="Gmail Address" required/>
                     <input type="hidden" id="message" value="{{ message }}">
                     <input id="submit" type="submit" value="SEND" onsubmit="">
                 </label>
