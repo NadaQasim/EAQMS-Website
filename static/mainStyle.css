@@ -40,12 +40,12 @@ html{
     float: right;
     width: 1020px;
     margin: 20px;
-    background: rgba(234, 231, 255, 0.25);
+    background: rgba(172, 255, 225, 0.15);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(3.6px);
     -webkit-backdrop-filter: blur(3.6px);
-    border: 1px solid rgba(234, 231, 255, 0.3);
+    border: 1px solid rgba(231, 255, 247, 0.3);
     padding: 30px;
 }
 #menu{
