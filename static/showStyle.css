@@ -1,0 +1,312 @@
+html{
+  background: #e0e5ec;
+}
+body
+{
+  margin: 0;
+  padding: 0;
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #ffffff;
+
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: #387df8;
+  text-decoration: underline #387df8;
+}
+
+#main{
+  background-color: #e0e5ec;
+}
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #cdcdcd;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/*
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #387df8;
+
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+
+#menu
+{
+  position: absolute;
+  width: 300px;
+   height: 180vh;
+  margin: -100px 0 0 -50px;
+  padding: 125px 35px 40px;
+  background: linear-gradient(80deg, rgba(201, 245, 224, 0.7), rgba(4, 218, 200, 0.7));
+  list-style-type: none;
+  /* to stop flickering of text in safari */
+  font-family: "Times New Roman", serif;
+  transform: translate(-100%, 0);
+  text-align: left;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+#title{
+  font-family: "Times New Roman", serif;
+  font-weight:300;
+  letter-spacing: 2px;
+  font-size:48px;
+}
+
+.header {
+  text-align:center;
+  background: linear-gradient(60deg, rgb(95, 183, 133) 0%, rgb(4, 218, 218) 100%);
+  color:white;
+}
+
+.inner-header {
+  height:250px;
+  width:100%;
+  margin: 2px;
+}
+
+.flex { /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position:relative;
+  width: 100%;
+  height:15vh;
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:150px;
+}
+
+.content {
+  position:relative;
+  height:20vh;
+  text-align:center;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)  infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% {
+    transform: translate3d(85px,0,0);
+  }
+}
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+.square {
+  margin: 20px;
+  border-radius: 15px;
+  width: 370px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
+.square h2{
+  font-family: "Times New Roman", serif;
+  color: #74777a;
+  padding: 5px;
+}
+.square p{
+  font-family: "Times New Roman", serif;
+  font-size: 30px;
+  padding: 5px;
+  float: left;
+  color: #2b4246;
+}
+.neumorphism {
+  background-color: #e0e5ec;
+  box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+}
+
+.square div img{
+  margin-right: 25px;
+  float: right;
+}
+.update{
+  font-size: 15px;
+}
+
+
+/*Shrinking for mobile*/
+@media (max-width: 788px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .content {
+    height:30vh;
+  }
+  #title{
+    font-size:30px;
+  }
+  .square{
+    width: 290px;
+    height: 170px;
+  }
+  .square img{
+    width: 40px;
+    height:40px;
+  }
+  .square p{
+    padding: 5px;
+    font-size: 25px;
+  }
+  .square h2{
+    font-size: 25px;
+    padding: 2px;
+
+  }
+  .update{
+    font-size: 8px;
+  }
+  #menu{
+    height: 310vh;
+  }
+  .container{
+    padding-top: 14px;
+  }
+  .aqi{
+    width: 85px;
+    height: 85px;
+    margin: 0  0 15px 0;
+    font-size: 14px;
+  }
+  .aqi h2,.aqi h5{
+    font-size: 17px;
+  }
+  .flex{
+    flex-direction: column-reverse;
+  }
+}
