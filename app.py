@@ -1,4 +1,6 @@
 from datetime import datetime
+
+from AQI import AQI
 from Alarm import Alarm
 import pytz
 from flask import Flask, render_template, request, redirect, url_for
@@ -98,7 +100,10 @@ def main():  # put application's code here
 @app.route('/show')
 def Display():
     info = AirData.query.order_by(AirData.date_created.desc()).first()
-    return render_template('showData.html', content=info)
+    aqi_al = []
+    if info:
+        aqi_al = AQI.get_final_aqi(info.pm10,info.pm2_5)
+    return render_template('showData.html', content=info,aqi_level = aqi_al)
 
 # Route to save emails to the database
 @app.route("/saveemail", methods=['POST'])

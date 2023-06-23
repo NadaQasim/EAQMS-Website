@@ -52,7 +52,7 @@ html{
      max-height: 120vh;
 }
 #email::placeholder {
-    padding-left: 4px;
+    padding-left: 6px;
     font-family: "Comic Sans MS", cursive;
 }
 #main p{
