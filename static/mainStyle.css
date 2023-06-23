@@ -10,12 +10,35 @@ html{
 }
 .pic{
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 17px;
+    margin-right: 25px;
     float: left;
+}
+#email{
+    border-radius: 15px;
+    border: none;
+    width: 350px;
+    height: 40px;
+    margin-right: 2px;
+    font-family: "Times New Roman", serif;
+}
+#submit{
+    border-radius: 15px;
+    border: none;
+    width: 90px;
+    height: 40px;
+    background: #60BE8D;
+    color: #ffffff;
+    font-family: "Times New Roman", serif;
+}
+#submit:hover{
+ background: #FFBCC0;
+    color: #ffffff;
+    box-shadow: 2px 5px 4px 0px #74777a;
 }
 .info{
     float: left;
-    width: 1000px;
+    width: 1020px;
     margin: 20px;
     background: rgba(234, 231, 255, 0.25);
     border-radius: 16px;
@@ -26,7 +49,7 @@ html{
     padding: 30px;
 }
 #menu{
-     height: 135vh;
+     max-height: 120vh;
 }
 #main p{
 
@@ -57,7 +80,7 @@ html{
         font-size: 13px;
     }
     #menu{
-        height: 190vh;
+        max-height: 170vh;
     }
 
 }

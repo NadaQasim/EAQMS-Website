@@ -8,6 +8,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../static/mainStyle.css">
     <link rel="stylesheet" href="../static/showStyle.css">
+    <script>
+    // This event listener waits for the HTML document to be fully loaded and parsed
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the value of the 'message' element
+        const message = document.getElementById('message').value;
+
+        // If the value of 'message' is 'success', alert the user that data was saved successfully
+        if (message === 'success') {
+            alert('Data saved successfully!');
+        }
+        // If the value of 'message' is 'fail', alert the user that the email already exists
+        else if(message === 'fail'){
+            alert('Email Already Exists!');
+        }
+
+    });
+    </script>
 
 </head>
 <body id="body">
@@ -55,12 +72,20 @@
 
 <div id="main">
     <div>
-        <img class="pic" src="../static/resources/planet-earth.png" alt="eco earth image" width="400px" height="400px">
+        <img class="pic" src="../static/resources/planet-earth.png" alt="eco earth image" width="290px" height="290px">
     </div>
     <div class="info">
         <p>Our Program About Eco-Air-Quality-Management-System (E-AQMS): A cost-efficient, robust outdoor air quality monitoring solution.
             Real-time data collection and display to mitigate airborne pollutant health risks. An eco-friendly initiative promoting
             sustainability and fostering greater environmental awareness. Join us in making a healthier planet :D</p>
+            <form id="emailForm" action="/saveemail" method="POST">
+            <p style="color: #60BE8D">To receive notifications, kindly provide your Gmail account:</p>
+                <label>
+                    <input name="email" id="email" type="email" placeholder="Gmail Address" required/>
+                    <input type="hidden" id="message" value="{{ message }}">
+                    <input id="submit" type="submit" value="SEND" onsubmit="">
+                </label>
+        </form>
     </div>
 </div>
 <div id="footer" style="background: #e0e5ec;">
@@ -73,5 +98,31 @@
       </div>
     </div>
 </div>
+
+<script>
+    // Add event listener for 'submit' event on the form with id 'emailForm'
+    document.getElementById('emailForm').addEventListener('submit', function (event) {
+        // Get the email input field
+        const emailInput = document.getElementById('email');
+        // Get the value of the email input field
+        const emailValue = emailInput.value;
+        // Check if the entered email is not a Gmail
+        if (!isGmailAddress(emailValue)) {
+            // If it's not, prevent the form from submitting
+            event.preventDefault();
+            // Alert the user to enter a Gmail address
+            alert('Please enter a Gmail address.');
+        }
+
+    });
+
+    //
+    function isGmailAddress(email) {
+        // Regular expression to check if an email is a Gmail address
+        const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+        // Test if the email matches either of the patterns
+        return gmailPattern.test(email) ;
+    }
+</script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 from datetime import datetime
 
 import pytz
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -80,12 +80,34 @@ def main():  # put application's code here
         else:
             return redirect('/')
     else:
-        return render_template('mainPage.html')
+        # Render the home page template with a message ("success" , "fail" or "")
+        message = request.args.get('message', '')
+        return render_template('mainPage.html', message=message)
 
 @app.route('/show')
 def Display():
     info = AirData.query.order_by(AirData.date_created.desc()).first()
     return render_template('showData.html', content=info)
+
+# Route to save emails to the database
+@app.route("/saveemail", methods=['POST'])
+def saveEmail():
+    # Checking if the email already exists in the database
+    # If not, add the email to the database
+    emails = [email[0] for email in Emails.query.with_entities(Emails.email).all()]
+    new_email = Emails(email=request.form['email'])
+
+    for email in emails:
+        if email == new_email.email:
+            return redirect(url_for('main', message='fail'))
+    else:
+        try:
+            db.session.add(new_email)
+            db.session.commit()
+            return redirect(url_for('main', message='success'))
+        except Exception as e:
+            print(e)
+            return "Fail to Save"
 
 
 if __name__ == '__main__':

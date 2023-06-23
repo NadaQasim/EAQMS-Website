@@ -178,7 +178,7 @@ body
 .waves {
   position:relative;
   width: 100%;
-  height:15vh;
+  height:16vh;
   margin-bottom:-7px; /*Fix for safari gap*/
   min-height:100px;
   max-height:150px;
@@ -284,7 +284,7 @@ body
     font-size: 8px;
   }
   #menu{
-    height: 310vh;
+    height: 355vh;
   }
   .container{
     padding-top: 14px;
