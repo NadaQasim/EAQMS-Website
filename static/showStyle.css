@@ -274,6 +274,10 @@ body
     height:40px;
     min-height:40px;
   }
+  #menu li
+  {
+  font-size: 22px;
+  }
   .content {
     height:30vh;
   }
