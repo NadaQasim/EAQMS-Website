@@ -80,6 +80,10 @@ html{
     #submit{
         width: 55px;
         font-size: 13px;
+        font-family: "Arial", cursive;
+    }
+    #email::placeholder {
+      font-family: "Arial", cursive;
     }
     #menu{
         max-height: 170vh;
